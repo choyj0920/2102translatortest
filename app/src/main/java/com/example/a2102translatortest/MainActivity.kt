@@ -1,5 +1,6 @@
 package com.example.a2102translatortest
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_translate.setOnClickListener { // 번역 버튼 리스너
             translate(before_text.text.toString())
+        }
+        changeButton.setOnClickListener{
+            val intent = Intent(this, JsonActivity::class.java)
+            startActivity(intent)
         }
     }
     fun translate(targettext:String){

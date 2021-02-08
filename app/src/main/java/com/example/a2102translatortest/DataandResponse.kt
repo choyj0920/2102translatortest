@@ -46,6 +46,16 @@ class Messageresult{
     @SerializedName("translatedText")
     val translatedText: String? = null
 }
+class jsonClass{
+    @SerializedName("userId")
+    val userId : String? =null
+    @SerializedName("id")
+    val id : String? =null
+    @SerializedName("title")
+    val title : String? =null
+    @SerializedName("body")
+    val body : String? =null
+}
 
 // NaverAPI 인터페이스
 interface API {
@@ -58,4 +68,9 @@ interface API {
         @Field("target") target: String,
         @Field("text") text: String
     ): Call<TranslateResponse?>
+
+    @GET("/posts/{index}")
+    fun getsjson(@Path("index") index: String?): Call<jsonClass>
+
+
 }
